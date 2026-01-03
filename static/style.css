@@ -1,0 +1,180 @@
+/* ===== GLOBAL ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+/* ===== APP LAYOUT ===== */
+.app {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    min-height: 100vh;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    background: #020617;
+    color: white;
+    padding: 30px 20px;
+}
+
+.sidebar h2 {
+    margin: 0 0 30px 0;
+    font-size: 22px;
+}
+
+.sidebar h2 span {
+    color: #38bdf8;
+}
+
+.nav div {
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* ===== MAIN ===== */
+.main {
+    padding: 35px 40px;
+}
+
+/* ===== HEADER ===== */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.badge {
+    background: linear-gradient(135deg, #38bdf8, #2563eb);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* ===== MESSAGE ===== */
+.message {
+    background: #e0f2fe;
+    padding: 12px 16px;
+    border-left: 4px solid #2563eb;
+    margin-bottom: 25px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* ===== GRID (FORMS) ===== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: stretch;
+}
+
+/* ===== CARD ===== */
+.card {
+    background: white;
+    padding: 22px 24px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card h3 {
+    margin: 0 0 18px 0;
+    font-size: 18px;
+}
+
+/* ===== FORM ===== */
+form {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+label {
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: #475569;
+}
+
+input {
+    padding: 10px 12px;
+    margin-bottom: 14px;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    font-size: 14px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+/* ===== BUTTON ===== */
+button {
+    margin-top: auto;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(135deg, #2563eb, #38bdf8);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(37, 99, 235, 0.4);
+}
+
+/* ===== LRU CACHE ===== */
+.cache-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cache-list li {
+    background: #f1f5f9;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    border-left: 4px solid #2563eb;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* ===== TREE SECTION ===== */
+.tree {
+    background: #020617;
+    color: #e5e7eb;
+    padding: 18px;
+    border-radius: 10px;
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-x: auto;
+}
+
+/* ===== BOTTOM SPACING ===== */
+section.card {
+    margin-top: 28px;
+}

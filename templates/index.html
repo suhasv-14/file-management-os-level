@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enterprise File Management System</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2>FMS<span>.</span></h2>
+        <div class="nav">
+            <div>📁 Directory Manager</div>
+            <div>📄 File Operations</div>
+            <div>⚡ LRU Cache Engine</div>
+            <div>📊 System View</div>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <!-- HEADER -->
+        <div class="header">
+            <h1>File Management Dashboard</h1>
+            <div class="badge">OS-LEVEL SYSTEM</div>
+        </div>
+
+        <!-- STATUS MESSAGE -->
+        {% if message %}
+        <div class="message">{{ message }}</div>
+        {% endif %}
+
+        <!-- ACTION GRID -->
+        <section class="grid">
+
+            <!-- CREATE DIRECTORY -->
+            <div class="card">
+                <h3>Create Directory</h3>
+                <form method="post">
+                    <input type="hidden" name="action" value="create_dir">
+                    <label>Parent Path</label>
+                    <input name="path" placeholder="/" required>
+                    <label>Directory Name</label>
+                    <input name="name" required>
+                    <button>Create Directory</button>
+                </form>
+            </div>
+
+            <!-- CREATE FILE -->
+            <div class="card">
+                <h3>Create File</h3>
+                <form method="post">
+                    <input type="hidden" name="action" value="create_file">
+                    <label>Directory Path</label>
+                    <input name="path" required>
+                    <label>File Name</label>
+                    <input name="name" required>
+                    <label>File Size (KB)</label>
+                    <input type="number" name="size" required>
+                    <button>Create File</button>
+                </form>
+            </div>
+
+            <!-- ACCESS FILE -->
+            <div class="card">
+                <h3>Access File</h3>
+                <form method="post">
+                    <input type="hidden" name="action" value="access_file">
+                    <label>File Name</label>
+                    <input name="name" required>
+                    <button>Access File</button>
+                </form>
+            </div>
+
+            <!-- DELETE FILE -->
+            <div class="card">
+                <h3>Delete File</h3>
+                <form method="post">
+                    <input type="hidden" name="action" value="delete_file">
+                    <label>File Name</label>
+                    <input name="name" required>
+                    <button>Delete File</button>
+                </form>
+            </div>
+
+            <!-- RENAME FILE -->
+            <div class="card">
+                <h3>Rename File</h3>
+                <form method="post">
+                    <input type="hidden" name="action" value="rename_file">
+                    <label>Old File Name</label>
+                    <input name="old_name" required>
+                    <label>New File Name</label>
+                    <input name="new_name" required>
+                    <button>Rename File</button>
+                </form>
+            </div>
+
+            <!-- LRU CACHE -->
+            <div class="card">
+                <h3>LRU Cache (Most → Least)</h3>
+                <ul class="cache-list">
+                    {% for f in cache %}
+                        <li>{{ f }}</li>
+                    {% else %}
+                        <li>No cached files</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+        </section>
+
+        <!-- DIRECTORY TREE -->
+        <section class="card" style="margin-top:30px;">
+            <h3>Directory Tree Structure</h3>
+            <pre class="tree">{{ tree }}</pre>
+        </section>
+
+        <!-- LIVE LOGS -->
+        <section class="card" style="margin-top:30px;">
+            <h3>Live Activity Logs</h3>
+            <ul class="cache-list">
+                {% for log in logs %}
+                    <li>{{ log }}</li>
+                {% else %}
+                    <li>No activity yet</li>
+                {% endfor %}
+            </ul>
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>
